@@ -1,0 +1,6 @@
+Pendientes proxima revisión:
+Arreglar XmlMapper para que matchee correctamente con xsd y hacer mas tests para esa clase.
+Refactorizar XmlMapper
+Borrar código muerto
+Completar correctamente informe
+Actualizar mas los diagramas
