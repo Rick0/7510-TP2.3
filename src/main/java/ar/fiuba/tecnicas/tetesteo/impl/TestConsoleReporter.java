@@ -56,6 +56,7 @@ public class TestConsoleReporter implements TestReporter {
 		}
 	}
 
+	@SuppressWarnings("unused")
 	private void printFooter(int errors, int failures, int successes) throws IOException {
         writer.write("");
 		if (errors > 0 || failures > 0) {

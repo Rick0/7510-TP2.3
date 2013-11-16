@@ -65,7 +65,8 @@ public class TestSuite extends AbstractTest {
         return true;
     }
 
-    private String getSuiteFullName(){
+    @SuppressWarnings("unused")
+	private String getSuiteFullName() {
     	if(suite.isEmpty()) {
     		return getName();
     	} else {

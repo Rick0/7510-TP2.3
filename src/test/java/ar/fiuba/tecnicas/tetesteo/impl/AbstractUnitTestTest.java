@@ -79,6 +79,7 @@ public class AbstractUnitTestTest {
 			
 			@Override
             public void test(TestExecutor testExecutor, Context context) {
+				@SuppressWarnings("unused")
 				int mathError = 5/0;
 			}
 		};

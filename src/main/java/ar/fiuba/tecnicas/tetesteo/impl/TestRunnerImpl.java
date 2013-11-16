@@ -24,6 +24,7 @@ public class TestRunnerImpl implements TestRunner {
 	public void run(Test test) {
         testExecutor.execute(test, new ContextImpl());
 
+		@SuppressWarnings("unused")
 		Map<String, List<TestResult>> results = testExecutor.getResults();
 		// resultados
 	}
@@ -33,7 +34,8 @@ public class TestRunnerImpl implements TestRunner {
 	public void run(Test test, String regularExpresion) {
         testExecutor.execute(test, new ContextImpl());
 
-        Map<String, List<TestResult>> results = testExecutor.getResults();
+        @SuppressWarnings("unused")
+		Map<String, List<TestResult>> results = testExecutor.getResults();
         // resultados
 	}
 }
