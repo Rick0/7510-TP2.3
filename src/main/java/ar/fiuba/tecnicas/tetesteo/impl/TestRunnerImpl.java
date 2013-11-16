@@ -14,28 +14,28 @@ import java.util.List;
 
 public class TestRunnerImpl implements TestRunner {
 
-    private TestExecutor testExecutor;
+	private TestExecutor testExecutor;
 
-    public TestRunnerImpl(Writer writer) {
-        testExecutor = new TestExecutorImpl(writer);
-    }
+	public TestRunnerImpl(Writer writer) {
+		testExecutor = new TestExecutorImpl(writer);
+	}
 
-    @Override
+	@Override
 	public void run(Test test) {
-        testExecutor.execute(test, new ContextImpl());
+		testExecutor.execute(test, new ContextImpl());
 
 		@SuppressWarnings("unused")
 		Map<String, List<TestResult>> results = testExecutor.getResults();
 		// resultados
 	}
 
-	
+
 	@Override
 	public void run(Test test, String regularExpresion) {
-        testExecutor.execute(test, new ContextImpl());
+		testExecutor.execute(test, new ContextImpl());
 
-        @SuppressWarnings("unused")
+		@SuppressWarnings("unused")
 		Map<String, List<TestResult>> results = testExecutor.getResults();
-        // resultados
+		// resultados
 	}
 }

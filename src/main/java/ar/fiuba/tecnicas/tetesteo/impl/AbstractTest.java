@@ -11,26 +11,26 @@ import java.util.TreeSet;
 
 public abstract class AbstractTest implements Test {
 
-    private final String name;
+	private final String name;
 
-    private final Set<String> labels;
-    private final boolean skipped;
+	private final Set<String> labels;
+	private final boolean skipped;
 
-    public AbstractTest(String name, boolean skipped, String... labels) {
-        this.name = name;
-        this.labels = new TreeSet<String>(Arrays.asList(labels));
-        this.skipped = skipped;
-    }
+	public AbstractTest(String name, boolean skipped, String... labels) {
+		this.name = name;
+		this.labels = new TreeSet<String>(Arrays.asList(labels));
+		this.skipped = skipped;
+	}
 
-    @Override
-    public String getName() {
-        return name;
-    }
+	@Override
+	public String getName() {
+		return name;
+	}
 
-    @Override
-    public Set<String> getLabels() {
-        return labels;
-    }
+	@Override
+	public Set<String> getLabels() {
+		return labels;
+	}
 
 	@Override
 	public void setup(Context context) {
@@ -40,8 +40,8 @@ public abstract class AbstractTest implements Test {
 	public void teardown(Context context) {
 	}
 
-    @Override
-    public boolean isSkipped() {
-        return skipped;
-    }
+	@Override
+	public boolean isSkipped() {
+		return skipped;
+	}
 }

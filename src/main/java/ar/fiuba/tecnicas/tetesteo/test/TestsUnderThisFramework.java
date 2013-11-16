@@ -20,7 +20,7 @@ public class TestsUnderThisFramework {
 			super("Assert Contains on Contained");
 		}
 		@Override
-        public void test(TestExecutor testExecutor, Context context) {
+		public void test(TestExecutor testExecutor, Context context) {
 			LinkedList<String> testList = new LinkedList<String>();
 			String testString = "testString";
 			testList.add(testString);
@@ -33,14 +33,14 @@ public class TestsUnderThisFramework {
 			super("Assert Equals on Equals");
 		}
 		@Override
-        public void test(TestExecutor testExecutor, Context context) {
+		public void test(TestExecutor testExecutor, Context context) {
 			int testElement = 1;
-            try {
-                Thread.sleep(2000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-            }
-            Asserts.assertEquals(testElement, 1);
+			try {
+				Thread.sleep(2000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+			}
+			Asserts.assertEquals(testElement, 1);
 		}
 	}
 
@@ -49,7 +49,7 @@ public class TestsUnderThisFramework {
 			super("Assert True on True");
 		}
 		@Override
-        public void test(TestExecutor testExecutor, Context context) {
+		public void test(TestExecutor testExecutor, Context context) {
 			Asserts.assertTrue(true);
 		}
 	}
@@ -59,7 +59,7 @@ public class TestsUnderThisFramework {
 			super("Assert Distinct on Distinct");
 		}	
 		@Override
-        public void test(TestExecutor testExecutor, Context context) {
+		public void test(TestExecutor testExecutor, Context context) {
 			Asserts.assertDistinct(1, 2);
 		}
 	}
@@ -69,7 +69,7 @@ public class TestsUnderThisFramework {
 			super("Assert Greater than on Greater");
 		}
 		@Override
-        public void test(TestExecutor testExecutor, Context context) {
+		public void test(TestExecutor testExecutor, Context context) {
 			Asserts.assertGreaterThan(2, 1);
 		}
 	}
@@ -80,7 +80,7 @@ public class TestsUnderThisFramework {
 			super("Assert Lower than on Lesser");
 		}
 		@Override
-        public void test(TestExecutor testExecutor, Context context) {
+		public void test(TestExecutor testExecutor, Context context) {
 			Asserts.assertLowerThan(1, 2);
 		}
 	}
@@ -90,11 +90,11 @@ public class TestsUnderThisFramework {
 			super("Assert False on False");
 		}
 		@Override
-        public void test(TestExecutor testExecutor, Context context) {
+		public void test(TestExecutor testExecutor, Context context) {
 			Asserts.assertFalse(false);
 		}
 	}
-	
+
 	public void allTestRun() {
 		TestRunner runner = new TestRunnerImpl(new StringWriter());
 		TestSuite allTests = new TestSuite("All Tests");
@@ -114,44 +114,44 @@ public class TestsUnderThisFramework {
 		TestSuite suiteB1 = new TestSuite("Suite B1");
 		TestSuite suiteB2 = new TestSuite("Suite B2");
 		TestSuite suiteC  = new TestSuite("Suite C");
-		
+
 		suiteA.addTest(new AssertFalseOnFalse());
 		suiteA.addTest(new AssertTrueOnTrue());
-		
+
 		suiteB1.addTest(new AssertGreaterThanOnGreater());
 		suiteB1.addTest(new AssertLowerThanOnLesser());
 		suiteB2.addTest(new AssertEqualsOnEquals());
 		suiteB2.addTest(new AssertContainsOnContained());
-		
+
 		suiteA.addTest(suiteB1);
 		suiteA.addTest(suiteB2);
-		
+
 		suiteC.addTest(new AssertDistinctOnDistinct());
 		suiteB2.addTest(suiteC);
-		
+
 		runner.run(suiteA);
 	}
 
-    public static void main(String args[]) {
-        TestSuite suiteA  = new TestSuite("Suite A");
-        TestSuite suiteB1 = new TestSuite("Suite B1");
-        TestSuite suiteB2 = new TestSuite("Suite B2");
-        TestSuite suiteC  = new TestSuite("Suite C");
+	public static void main(String args[]) {
+		TestSuite suiteA  = new TestSuite("Suite A");
+		TestSuite suiteB1 = new TestSuite("Suite B1");
+		TestSuite suiteB2 = new TestSuite("Suite B2");
+		TestSuite suiteC  = new TestSuite("Suite C");
 
-        suiteA.addTest(new AssertFalseOnFalse());
-        suiteA.addTest(new AssertTrueOnTrue());
+		suiteA.addTest(new AssertFalseOnFalse());
+		suiteA.addTest(new AssertTrueOnTrue());
 
-        suiteB1.addTest(new AssertGreaterThanOnGreater());
-        suiteB1.addTest(new AssertLowerThanOnLesser());
-        suiteB2.addTest(new AssertEqualsOnEquals());
-        suiteB2.addTest(new AssertContainsOnContained());
+		suiteB1.addTest(new AssertGreaterThanOnGreater());
+		suiteB1.addTest(new AssertLowerThanOnLesser());
+		suiteB2.addTest(new AssertEqualsOnEquals());
+		suiteB2.addTest(new AssertContainsOnContained());
 
-        suiteA.addTest(suiteB1);
-        suiteA.addTest(suiteB2);
+		suiteA.addTest(suiteB1);
+		suiteA.addTest(suiteB2);
 
-        suiteC.addTest(new AssertDistinctOnDistinct());
-        suiteB2.addTest(suiteC);
+		suiteC.addTest(new AssertDistinctOnDistinct());
+		suiteB2.addTest(suiteC);
 
-        TestMain.doMain(System.out, suiteA);
-    }
+		TestMain.doMain(System.out, suiteA);
+	}
 }

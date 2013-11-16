@@ -4,8 +4,8 @@ public class DAOTestCase {
 	private String name;
 	private long time;
 	private boolean status;
-	
-	
+
+
 	public String getName() {
 		return name;
 	}
@@ -24,5 +24,5 @@ public class DAOTestCase {
 	public void setStatus(boolean status) {
 		this.status = status;
 	}
-	
+
 }

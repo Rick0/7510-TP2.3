@@ -12,65 +12,65 @@ import java.util.LinkedList;
  */
 public class TestSuite extends AbstractTest {
 
-    private Collection<Test> childTest;
-    
-    private String suite;
+	private Collection<Test> childTest;
 
-    public TestSuite(String name, boolean skipped, String... labels) {
-        super(name, skipped, labels);
-        childTest = new LinkedList<>();
-        suite = "";
-    }
+	private String suite;
 
-    public TestSuite(String name, String... labels) {
-        this(name, false, labels);
-    }
-
-    public void addTest(Test test) {
-    	if(isValidName(test)) {
-    		childTest.add(test);
-    	} else {
-    		System.out.println("El test " + test.getName() + " ya existe en la suite " + getName());
-    	}
-    }
-
-    private boolean isValidName(Test test) {
-    	for(Test t: childTest) {
-    		if(t.getName().equals(test.getName())) {
-    			return false;
-    		}
-    	}
-    	return true;
+	public TestSuite(String name, boolean skipped, String... labels) {
+		super(name, skipped, labels);
+		childTest = new LinkedList<>();
+		suite = "";
 	}
 
-    public void test(TestExecutor testExecutor, Context context) {
-        for (Test test: childTest) {
-            testExecutor.executeOnSuite(getName(), test, context.duplicar());
-        }
-        if(!childTestAreSuccesses(testExecutor.getResults().get(this.getName()))) {
-        	throw new AssertionError();
-        }
-    }
+	public TestSuite(String name, String... labels) {
+		this(name, false, labels);
+	}
 
-    private boolean childTestAreSuccesses(Collection<TestResult> results) {
-    	for(TestResult result : results) {
-    		if(!result.isSuccess())
-    			return false;
-    	}
-    	return true;
-    }
-    
-    @Override
-    public boolean isSuite() {
-        return true;
-    }
+	public void addTest(Test test) {
+		if(isValidName(test)) {
+			childTest.add(test);
+		} else {
+			System.out.println("El test " + test.getName() + " ya existe en la suite " + getName());
+		}
+	}
 
-    @SuppressWarnings("unused")
+	private boolean isValidName(Test test) {
+		for(Test t: childTest) {
+			if(t.getName().equals(test.getName())) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+	public void test(TestExecutor testExecutor, Context context) {
+		for (Test test: childTest) {
+			testExecutor.executeOnSuite(getName(), test, context.duplicar());
+		}
+		if(!childTestAreSuccesses(testExecutor.getResults().get(this.getName()))) {
+			throw new AssertionError();
+		}
+	}
+
+	private boolean childTestAreSuccesses(Collection<TestResult> results) {
+		for(TestResult result : results) {
+			if(!result.isSuccess())
+				return false;
+		}
+		return true;
+	}
+
+	@Override
+	public boolean isSuite() {
+		return true;
+	}
+
+	@SuppressWarnings("unused")
 	private String getSuiteFullName() {
-    	if(suite.isEmpty()) {
-    		return getName();
-    	} else {
-    		return suite + "." + getName();
-    	}
-    }
+		if(suite.isEmpty()) {
+			return getName();
+		} else {
+			return suite + "." + getName();
+		}
+	}
 }

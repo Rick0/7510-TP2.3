@@ -9,7 +9,7 @@ package ar.fiuba.tecnicas.tetesteo;
  */
 public interface TestRunner {
 
-    void run(Test test);
+	void run(Test test);
 
-    void run(Test test, String regularExpresion);
+	void run(Test test, String regularExpresion);
 }

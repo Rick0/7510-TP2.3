@@ -14,22 +14,22 @@ import java.util.Map;
 public class TestResultCollectorImpl implements TestResultCollector {
 
 	private Map<String, List<TestResult>> results;
-	
+
 	private TestResult last;
 
-    private TestReporter reporter;
+	private TestReporter reporter;
 
-    public TestResultCollectorImpl(Writer writer) {
-        results = new HashMap<String, List<TestResult>>();
-        reporter = new TestConsoleReporter(writer);
-    }
+	public TestResultCollectorImpl(Writer writer) {
+		results = new HashMap<String, List<TestResult>>();
+		reporter = new TestConsoleReporter(writer);
+	}
 
-    public TestResultCollectorImpl() {
-        results = new HashMap<String, List<TestResult>>();
-        reporter = new TestConsoleReporter(new OutputStreamWriter(System.out));
-    }
+	public TestResultCollectorImpl() {
+		results = new HashMap<String, List<TestResult>>();
+		reporter = new TestConsoleReporter(new OutputStreamWriter(System.out));
+	}
 
-    @Override
+	@Override
 	public void collect(TestResult testResult) {
 		last = testResult;
 		if(!results.containsKey(testResult.getSuiteName())) {
@@ -40,7 +40,7 @@ public class TestResultCollectorImpl implements TestResultCollector {
 			List<TestResult> suiteResults = results.get(testResult.getSuiteName());
 			suiteResults.add(testResult);
 		}
-        reporter.report(testResult);
+		reporter.report(testResult);
 	}
 
 	@Override
@@ -57,7 +57,7 @@ public class TestResultCollectorImpl implements TestResultCollector {
 	public Map<String, List<TestResult>> getResults() {
 		return results;
 	}
-	
+
 	public TestResult getTestResultFromSuite(String testName, String suiteName) {
 		for(TestResult result : results.get(suiteName)) {
 			if(testName.equals(result.getTestName())) {

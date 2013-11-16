@@ -7,18 +7,18 @@ public class TestResultImpl implements TestResult {
 	private final String type;
 	private final Boolean success;
 	private final String message;
-    private final long time;
-    private final String testName;
+	private final long time;
+	private final String testName;
 	private final String suiteName;
 	private final Boolean isSuite;
-	
+
 	private TestResultImpl(String type, Boolean success, String message,
-                           long time, String testName, String suiteName, Boolean suiteFlag) {
+			long time, String testName, String suiteName, Boolean suiteFlag) {
 		this.type = type;
 		this.success = success;
 		this.message = message;
-        this.time = time;
-        this.testName = testName;
+		this.time = time;
+		this.testName = testName;
 		this.suiteName = suiteName;
 		this.isSuite = suiteFlag;
 	}
@@ -57,27 +57,27 @@ public class TestResultImpl implements TestResult {
 		return suiteName;
 	}
 
-    @Override
-    public long getTime() {
-        return time;
-    }
+	@Override
+	public long getTime() {
+		return time;
+	}
 
-    @Override
-    public Boolean isSuite() {
-    	return isSuite;
-    }
-    
-    public static class Builder implements TestResult.Builder {
+	@Override
+	public Boolean isSuite() {
+		return isSuite;
+	}
+
+	public static class Builder implements TestResult.Builder {
 
 		private String type = new Success().toString();
 		private Boolean success = Boolean.TRUE;
 		private String message = "";
 		private String testName = "";
 		private String suiteName = ".";
-        private long time = 0;
-        private Boolean isSuite = Boolean.FALSE;
-        
-        public Builder withType(String type) {
+		private long time = 0;
+		private Boolean isSuite = Boolean.FALSE;
+
+		public Builder withType(String type) {
 			this.type = type;
 			return this;
 		}
@@ -106,11 +106,11 @@ public class TestResultImpl implements TestResult {
 			this.testName = testName;
 			return this;
 		}
-		
+
 		public Builder setSuiteFlag(boolean flag) {
-	    	this.isSuite = Boolean.valueOf(flag);
-	    	return this;
-	    }
+			this.isSuite = Boolean.valueOf(flag);
+			return this;
+		}
 
 		@Override
 		public TestResult.Builder onSuite(String suiteName) {
@@ -118,13 +118,13 @@ public class TestResultImpl implements TestResult {
 			return this;
 		}
 
-        @Override
-        public TestResult.Builder withTime(long time) {
-            this.time = time;
-            return this;
-        }
+		@Override
+		public TestResult.Builder withTime(long time) {
+			this.time = time;
+			return this;
+		}
 
-        public TestResult build() {
+		public TestResult build() {
 			return new TestResultImpl(type, success, message, time, testName,
 					suiteName, isSuite);
 		}

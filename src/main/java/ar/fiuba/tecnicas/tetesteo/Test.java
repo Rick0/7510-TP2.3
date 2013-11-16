@@ -8,17 +8,17 @@ import java.util.Set;
  */
 public interface Test {
 
-    void test(TestExecutor testExecutor, Context context);
+	void test(TestExecutor testExecutor, Context context);
 
-    String getName();
+	String getName();
 
-    Set<String> getLabels();
+	Set<String> getLabels();
 
-    void setup(Context context);
-    
-    void teardown(Context context);
+	void setup(Context context);
 
-    boolean isSuite();
+	void teardown(Context context);
 
-    boolean isSkipped();
+	boolean isSuite();
+
+	boolean isSkipped();
 }

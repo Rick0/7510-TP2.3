@@ -7,11 +7,11 @@ import java.lang.AssertionError;
 
 public class AssertContains<T> implements Assert2<Collection<T>, T> {
 
-    @Override
-    public void apply(Collection<T> collection, T t) {
-        Boolean success = collection.contains(t);
-        if(!success) {
-            throw new AssertionError(t.toString() + " are not contained on " + collection.toString());
-        }
-    }
+	@Override
+	public void apply(Collection<T> collection, T t) {
+		Boolean success = collection.contains(t);
+		if(!success) {
+			throw new AssertionError(t.toString() + " are not contained on " + collection.toString());
+		}
+	}
 }

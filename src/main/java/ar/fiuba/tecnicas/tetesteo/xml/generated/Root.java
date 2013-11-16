@@ -7,11 +7,11 @@ import ar.fiuba.tecnicas.tetesteo.xml.generated.DAOTestSuite;
 
 public class Root {
 	List<DAOTestSuite> testsuites;
-	
+
 	public Root() {
 		testsuites = new ArrayList<DAOTestSuite>();
 	}
-	
+
 	public String getName() {
 		return name;
 	}
@@ -42,11 +42,11 @@ public class Root {
 	public void setTime(long time) {
 		this.time = time;
 	}
-	
+
 	public void addTestSuite(DAOTestSuite suite) {
 		this.testsuites.add(suite);
 	}
-	
+
 	private String name;
 	private int tests;
 	private int failures;

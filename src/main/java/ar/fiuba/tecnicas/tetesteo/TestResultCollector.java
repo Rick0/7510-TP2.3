@@ -13,7 +13,7 @@ public interface TestResultCollector {
 	TestResult getLastTestResult();
 
 	TestResult getTestResultFromSuite(String testName, String suiteName);
-	
+
 	TestResult.Builder createTestResultBuilder();
 
 	Map<String, List<TestResult>> getResults();

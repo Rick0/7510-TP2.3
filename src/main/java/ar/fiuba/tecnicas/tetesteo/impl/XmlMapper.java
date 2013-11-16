@@ -13,18 +13,18 @@ import java.util.Map;
 //TODO FALTA
 
 public class XmlMapper {
-	
+
 	public XmlMapper() {
 		xmlGenerator = new XStream();
 		xml = new StringBuffer();
 		suites = new Root();
 		setAliases();
 	}
-	
+
 	private XStream xmlGenerator;
 	private StringBuffer xml;
 	private Root suites;
-	
+
 	public void addTestCaseOnSuite(DAOTestSuite suite, TestResult result) {
 		DAOTestCase testcase = new DAOTestCase();
 		testcase.setName(result.getTestName());
@@ -32,7 +32,7 @@ public class XmlMapper {
 		testcase.setTime(result.getTime());
 		suite.addTestCase(testcase);
 	}
-	
+
 	public void addTestCase(TestResult result) {
 		DAOTestCase testcase = new DAOTestCase();
 		testcase.setName(result.getTestName());
@@ -40,8 +40,8 @@ public class XmlMapper {
 		testcase.setTime(result.getTime());
 		xml.append(xmlGenerator.toXML(testcase));
 	}
-	
-	
+
+
 	public void addTestSuite(TestSuite suite, Map<String, List<TestResult>> resultLists) {
 		DAOTestSuite suiteXml = new DAOTestSuite();
 		TestResult suiteResult = getTestResultFromSuite(suite.getName(), ".", resultLists);
@@ -50,7 +50,7 @@ public class XmlMapper {
 		addTestSuiteRecursive(suite.getName(), suiteXml, resultLists);
 		suites.addTestSuite(suiteXml);
 	}
-	
+
 	private TestResult getTestResultFromSuite(String testName, String suiteName,
 			Map<String, List<TestResult>> results) {
 		for(TestResult result : results.get(suiteName)) {
@@ -60,8 +60,8 @@ public class XmlMapper {
 		}
 		return null;
 	}
-	
-	
+
+
 	private void addTestSuiteRecursive(String currentSuiteName, DAOTestSuite suite, Map<String, List<TestResult>> resultLists) {
 		for(TestResult result : resultLists.get(currentSuiteName)) {
 			if(result.isSuite()) {
@@ -71,13 +71,13 @@ public class XmlMapper {
 			}
 		}
 	}
-	
+
 	private void setAliases() {
 		xmlGenerator.alias("testsuite", DAOTestSuite.class);
 		xmlGenerator.alias("testcase", DAOTestCase.class);
 		xmlGenerator.alias("root", Root.class);
 	}
-	
+
 	public void print() {
 		// TODO Cambiar por metodo de verdad
 		PrintWriter writer;
@@ -87,8 +87,8 @@ public class XmlMapper {
 			writer.write(xml.toString());
 			writer.close();
 		} catch(Exception e) {
-			
+
 		}
 	}
-	
+
 }

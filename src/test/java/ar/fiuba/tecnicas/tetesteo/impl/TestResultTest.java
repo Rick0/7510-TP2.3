@@ -31,7 +31,7 @@ public class TestResultTest {
 		TestResult tr = resultBuilder.build();
 		assertEquals(true, tr.isSuccess());
 	}
-	
+
 	@Test
 	public void concatOnMessage() {
 		String message = new String("message");
@@ -43,7 +43,7 @@ public class TestResultTest {
 		TestResult tr = resultBuilder.build();
 		assertEquals(message + concatMessage, tr.getMessage());
 	}
-	
+
 	@Test
 	public void withTestName() {
 		TestResultCollector testResultCollector = new TestResultCollectorImpl();
@@ -52,7 +52,7 @@ public class TestResultTest {
 		TestResult tr = resultBuilder.build();
 		assertEquals("TestName", tr.getTestName());
 	}
-	
+
 	@Test
 	public void withSuitName() {
 		TestResultCollector testResultCollector = new TestResultCollectorImpl();
@@ -61,7 +61,7 @@ public class TestResultTest {
 		TestResult tr = resultBuilder.build();
 		assertEquals("SuiteName", tr.getSuiteName());
 	}
-	
+
 	@Test
 	public void toStringEquals() {
 		TestResultCollector testResultCollector = new TestResultCollectorImpl();
@@ -75,7 +75,7 @@ public class TestResultTest {
 		TestResult tr2 = anotherResultBuilder.build();
 		assertEquals(tr.toString(), tr2.toString());
 	}
-	
+
 	@Test
 	public void toStringInequals() {
 		TestResultCollector testResultCollector = new TestResultCollectorImpl();

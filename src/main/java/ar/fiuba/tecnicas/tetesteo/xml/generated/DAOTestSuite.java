@@ -11,11 +11,11 @@ public class DAOTestSuite {
 	private int failures;
 	private int errors;
 	private long time;
-	
+
 	public DAOTestSuite() {
 		TestCases = new ArrayList<DAOTestCase>();
 	}
-	
+
 	public List<DAOTestCase> getTestCases() {
 		return TestCases;
 	}
@@ -52,9 +52,9 @@ public class DAOTestSuite {
 	public void setTime(long time) {
 		this.time = time;
 	}
-	
+
 	public void addTestCase(DAOTestCase testCase) {
 		this.TestCases.add(testCase);
 	}
-	
+
 }
