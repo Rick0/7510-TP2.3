@@ -2,7 +2,7 @@ package ar.fiuba.tecnicas.tetesteo.asserts.impl;
 
 import ar.fiuba.tecnicas.tetesteo.asserts.Assert2;
 
-public class AssertGreaterThan<T extends Comparable> implements Assert2<T, T> {
+public class AssertGreaterThan<T extends Comparable<T> > implements Assert2<T, T> {
 
     @Override
     public void apply(T t1, T t2) {

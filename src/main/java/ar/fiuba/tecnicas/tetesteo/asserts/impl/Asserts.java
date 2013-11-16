@@ -15,11 +15,11 @@ public class Asserts {
         new AssertDistinct<T>().apply(t1, t2);
     }
 
-    public static<T extends Comparable> void assertGreaterThan(T t1, T t2) {
+    public static<T extends Comparable<T> > void assertGreaterThan(T t1, T t2) {
         new AssertGreaterThan<T>().apply(t1, t2);
     }
 
-    public static<T extends Comparable> void assertLowerThan(T t1, T t2) {
+    public static<T extends Comparable<T> > void assertLowerThan(T t1, T t2) {
         new AssertLowerThan<T>().apply(t1, t2);
     }
 

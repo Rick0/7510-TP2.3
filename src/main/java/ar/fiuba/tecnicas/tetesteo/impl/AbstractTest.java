@@ -18,7 +18,7 @@ public abstract class AbstractTest implements Test {
 
     public AbstractTest(String name, boolean skipped, String... labels) {
         this.name = name;
-        this.labels = new TreeSet(Arrays.asList(labels));
+        this.labels = new TreeSet<String>(Arrays.asList(labels));
         this.skipped = skipped;
     }
 

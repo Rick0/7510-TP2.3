@@ -25,7 +25,8 @@ public class ContextImpl implements Context {
     @Override
     public <T> T getProperty(String name) {
         try {
-            T value = (T) values.get(name);
+            @SuppressWarnings("unchecked")
+			T value = (T)values.get(name);
             return value;
         } catch (ClassCastException ex) {
             return null;
