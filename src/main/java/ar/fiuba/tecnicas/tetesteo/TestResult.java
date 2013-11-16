@@ -1,6 +1,6 @@
 package ar.fiuba.tecnicas.tetesteo;
 
-import ar.fiuba.tecnicas.tetesteo.impl.TestResultImpl.Builder;
+//import ar.fiuba.tecnicas.tetesteo.impl.TestResultImpl.Builder;
 
 /**
  * Objeto que representa el resultado de un test

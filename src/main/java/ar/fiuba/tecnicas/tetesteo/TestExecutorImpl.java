@@ -1,7 +1,7 @@
 package ar.fiuba.tecnicas.tetesteo;
 
 import ar.fiuba.tecnicas.tetesteo.impl.TestResultCollectorImpl;
-import ar.fiuba.tecnicas.tetesteo.impl.XmlMapper;
+//import ar.fiuba.tecnicas.tetesteo.impl.XmlMapper;
 
 import java.io.OutputStreamWriter;
 import java.io.Writer;
@@ -10,8 +10,8 @@ import java.util.Set;
 import java.util.TreeSet;
 import java.util.regex.Pattern;
 import java.util.Map;
-import ar.fiuba.tecnicas.tetesteo.impl.XmlMapper;
-import ar.fiuba.tecnicas.tetesteo.impl.TestSuite;
+//import ar.fiuba.tecnicas.tetesteo.impl.XmlMapper;
+//import ar.fiuba.tecnicas.tetesteo.impl.TestSuite;
 
 /**
  * Visitor para ejecutar los distintos tests

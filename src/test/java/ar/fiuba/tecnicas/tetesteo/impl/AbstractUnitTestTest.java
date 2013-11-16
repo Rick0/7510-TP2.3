@@ -4,7 +4,7 @@ import ar.fiuba.tecnicas.tetesteo.*;
 import ar.fiuba.tecnicas.tetesteo.asserts.impl.Asserts;
 
 import java.io.OutputStreamWriter;
-import java.util.regex.Pattern;
+//import java.util.regex.Pattern;
 
 import static org.mockito.Mockito.*;
 

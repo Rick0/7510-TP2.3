@@ -1,7 +1,7 @@
 package ar.fiuba.tecnicas.tetesteo;
 
 import java.util.Set;
-import java.util.regex.Pattern;
+//import java.util.regex.Pattern;
 
 /**
  * Interfaz unica para los test

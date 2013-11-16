@@ -4,7 +4,7 @@ import ar.fiuba.tecnicas.tetesteo.*;
 
 import java.util.Collection;
 import java.util.LinkedList;
-import java.util.regex.Pattern;
+//import java.util.regex.Pattern;
 
 /**
  * Agrupacion de tests unitarios, para un mejor reporte de resultados, idealmente debiera haber un test suite por cada
