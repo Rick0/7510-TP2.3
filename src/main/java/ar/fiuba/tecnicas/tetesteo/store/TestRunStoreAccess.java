@@ -34,8 +34,10 @@ public class TestRunStoreAccess {
 	}
 
 	public void addTestOk(String testName){
-		setDefaultStore();
-		singleton.testRunStore.addTestOk(testName);
+		if (checkOldStores){
+			setDefaultStore();
+			singleton.testRunStore.addTestOk(testName);
+		}
 	}
 
 
