@@ -24,6 +24,7 @@ public interface TestResult {
 	String toString();
 
 	Boolean isSuite();
+		
 
 	/**
 	 * Builder de resultado, asi se puede ir llenando los distintos valores del resultado antes de ser creado,
@@ -47,7 +48,7 @@ public interface TestResult {
 		Builder withTime(long durationOnMillis);
 
 		Builder setSuiteFlag(boolean suiteFlag);
-
+				
 		TestResult build();
 
 	}

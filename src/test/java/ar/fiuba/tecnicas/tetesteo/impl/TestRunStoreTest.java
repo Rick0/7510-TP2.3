@@ -154,12 +154,14 @@ public class TestRunStoreTest {
 	
 	private void createTestRunStoreTxt(String path){
 		TxtFileTestRunStore store = new TxtFileTestRunStore(path);
-		TestRunStoreAccess.setTestRunStore(store);
+		TestRunStoreAccess.getInstance().setTrueCheckOldStores();
+		TestRunStoreAccess.getInstance().setTestRunStore(store);
 	}
 	
 	private void createTestRunStoreOnMemory(){
 		MemoryTestRunStore store = new MemoryTestRunStore();
-		TestRunStoreAccess.setTestRunStore(store);
+		TestRunStoreAccess.getInstance().setTrueCheckOldStores();
+		TestRunStoreAccess.getInstance().setTestRunStore(store);
 	}
 	
 	private Map<String, List<TestResult>> executeTestSuite(TestSuite testSuite){

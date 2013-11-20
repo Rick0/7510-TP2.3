@@ -1,20 +1,26 @@
 package ar.fiuba.tecnicas.tetesteo.store;
 
 public class TestRunStoreAccess {
-	private TestRunStore testRunStore;	
+	private TestRunStore testRunStore;
+	private boolean checkOldStores;
 	private static TestRunStoreAccess singleton = new TestRunStoreAccess();		
 	
 
 	private TestRunStoreAccess(){
 		testRunStore = null;
+		checkOldStores = false;
 	}
 
 	public static TestRunStoreAccess getInstance( ) {		
 		return singleton;
 	}
 		
-	public static void setTestRunStore(TestRunStore test){		
+	public void setTestRunStore(TestRunStore test){		
 		singleton.testRunStore = test;
+	}
+	
+	public void setTrueCheckOldStores(){
+		checkOldStores = true;
 	}
 		
 	public boolean hasStores(){
@@ -24,7 +30,7 @@ public class TestRunStoreAccess {
 
 	public boolean isTestOk(String testName){
 		setDefaultStore();
-		return singleton.testRunStore.isTestOk(testName);
+		return checkOldStores && singleton.testRunStore.isTestOk(testName);
 	}
 
 	public void addTestOk(String testName){
@@ -38,7 +44,7 @@ public class TestRunStoreAccess {
 		singleton.testRunStore.deleteOldStores();
 	}
 	
-	private static void setDefaultStore(){
+	private void setDefaultStore(){
 		if (singleton.testRunStore == null){
 			singleton.testRunStore = new TxtFileTestRunStore("Reporte.txt");
 		}

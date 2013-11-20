@@ -52,7 +52,7 @@ public class TestExecutorImpl implements TestExecutor {
 	}
 
 	@Override
-	public void execute(Test test, Context context) {
+	public void execute(Test test, Context context) {		
 		if (shouldExecute(test)) {
 			executeTest(test, testResultCollector.createTestResultBuilder(), context);
 		}
@@ -60,7 +60,8 @@ public class TestExecutorImpl implements TestExecutor {
 
 	@Override
 	public void executeOnSuite(String suiteName, Test test, Context context) {
-		if (shouldExecute(test)) {
+		boolean alreadyTested = TestRunStoreAccess.getInstance().isTestOk(suiteName+test.getName());	
+		if ((!alreadyTested) && (shouldExecute(test))) {
 			executeTest(test, testResultCollector.createTestResultBuilder().onSuite(suiteName), context);
 		}
 	}
@@ -73,6 +74,7 @@ public class TestExecutorImpl implements TestExecutor {
 		boolean regexMatches = test.isSuite() || pattern.matcher(test.getName()).matches();
 		boolean labelsMatches = labels.isEmpty() || hasLabel(test.getLabels());
 		return (!alreadyTested) && regexMatches && labelsMatches;
+
 	}
 
 	@Override
