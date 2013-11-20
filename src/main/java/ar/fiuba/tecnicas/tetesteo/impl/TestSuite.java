@@ -27,7 +27,7 @@ public class TestSuite extends AbstractTest {
 	}
 
 	public void addTest(Test test) {
-		if(isValidName(test)) {
+		if(isValidName(test)) {			
 			childTest.add(test);
 		} else {
 			System.out.println("El test " + test.getName() + " ya existe en la suite " + getName());

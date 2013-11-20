@@ -13,6 +13,8 @@ import java.util.Map;
 //import ar.fiuba.tecnicas.tetesteo.impl.XmlMapper;
 //import ar.fiuba.tecnicas.tetesteo.impl.TestSuite;
 
+import ar.fiuba.tecnicas.tetesteo.store.TestRunStoreAccess;
+
 /**
  * Visitor para ejecutar los distintos tests
  */
@@ -65,10 +67,12 @@ public class TestExecutorImpl implements TestExecutor {
 
 	private boolean shouldExecute(Test test) {
 		if(test.isSkipped()) return false;
-
+		
+		boolean alreadyTested = TestRunStoreAccess.getInstance().isTestOk(test.getName());
+		
 		boolean regexMatches = test.isSuite() || pattern.matcher(test.getName()).matches();
 		boolean labelsMatches = labels.isEmpty() || hasLabel(test.getLabels());
-		return regexMatches && labelsMatches;
+		return (!alreadyTested) && regexMatches && labelsMatches;
 	}
 
 	@Override

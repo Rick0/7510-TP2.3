@@ -25,7 +25,7 @@ public class TestRunnerImpl implements TestRunner {
 		testExecutor.execute(test, new ContextImpl());
 
 		@SuppressWarnings("unused")
-		Map<String, List<TestResult>> results = testExecutor.getResults();
+		Map<String, List<TestResult>> results = testExecutor.getResults();		
 		// resultados
 	}
 

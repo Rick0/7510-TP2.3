@@ -10,7 +10,7 @@ public abstract class TestMain {
 	public static int doMain(OutputStream output, TestSuite mainTestSuite) {
 		Writer writer = new OutputStreamWriter(output);
 		new TestRunnerImpl(writer).run(mainTestSuite);
-		try {
+		try {			
 			writer.close();
 		} catch (IOException e) {
 			e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.

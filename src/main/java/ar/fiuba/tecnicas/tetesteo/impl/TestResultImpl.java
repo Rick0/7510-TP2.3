@@ -1,6 +1,7 @@
 package ar.fiuba.tecnicas.tetesteo.impl;
 
 import ar.fiuba.tecnicas.tetesteo.TestResult;
+import ar.fiuba.tecnicas.tetesteo.store.TestRunStoreAccess;
 
 public class TestResultImpl implements TestResult {
 
@@ -15,6 +16,9 @@ public class TestResultImpl implements TestResult {
 	private TestResultImpl(String type, Boolean success, String message,
 			long time, String testName, String suiteName, Boolean suiteFlag) {
 		this.type = type;
+		if (success){
+			TestRunStoreAccess.getInstance().addTestOk(testName);
+		}
 		this.success = success;
 		this.message = message;
 		this.time = time;

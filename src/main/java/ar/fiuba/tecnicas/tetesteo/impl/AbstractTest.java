@@ -3,6 +3,7 @@ package ar.fiuba.tecnicas.tetesteo.impl;
 import ar.fiuba.tecnicas.tetesteo.Context;
 import ar.fiuba.tecnicas.tetesteo.Test;
 
+
 //import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Set;
@@ -16,9 +17,9 @@ public abstract class AbstractTest implements Test {
 	private final Set<String> labels;
 	private final boolean skipped;
 
-	public AbstractTest(String name, boolean skipped, String... labels) {
+	public AbstractTest(String name, boolean skipped, String... labels) {		
 		this.name = name;
-		this.labels = new TreeSet<String>(Arrays.asList(labels));
+		this.labels = new TreeSet<String>(Arrays.asList(labels));		
 		this.skipped = skipped;
 	}
 

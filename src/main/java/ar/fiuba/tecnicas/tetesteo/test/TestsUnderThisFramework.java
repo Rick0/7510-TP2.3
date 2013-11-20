@@ -1,7 +1,11 @@
 package ar.fiuba.tecnicas.tetesteo.test;
 
 
+import ar.fiuba.tecnicas.tetesteo.store.*;
+
+import java.io.OutputStreamWriter;
 import java.io.StringWriter;
+import java.io.Writer;
 import java.util.LinkedList;
 
 import ar.fiuba.tecnicas.tetesteo.Context;
@@ -152,6 +156,14 @@ public class TestsUnderThisFramework {
 		suiteC.addTest(new AssertDistinctOnDistinct());
 		suiteB2.addTest(suiteC);
 
-		TestMain.doMain(System.out, suiteA);
+		TxtFileTestRunStore txtFile = new TxtFileTestRunStore("Reportea.txt");
+		TestRunStoreAccess.getInstance().setTestRunStore(txtFile);
+		int res = TestMain.doMain(System.out, suiteA);		
+//		TestMain.doMain(System.out, suiteA);
+		
+		Writer writer = new OutputStreamWriter(System.out);
+		new TestRunnerImpl(writer).run(suiteA);
+		
+		
 	}
 }
