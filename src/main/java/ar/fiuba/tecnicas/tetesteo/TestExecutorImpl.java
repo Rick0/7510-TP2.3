@@ -60,8 +60,7 @@ public class TestExecutorImpl implements TestExecutor {
 
 	@Override
 	public void executeOnSuite(String suiteName, Test test, Context context) {
-		boolean alreadyTested = TestRunStoreAccess.getInstance().isTestOk(suiteName+test.getName());	
-		if ((!alreadyTested) && (shouldExecute(test))) {
+		if (shouldExecute(test)) {		
 			executeTest(test, testResultCollector.createTestResultBuilder().onSuite(suiteName), context);
 		}
 	}
