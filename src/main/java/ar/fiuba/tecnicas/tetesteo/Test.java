@@ -21,4 +21,8 @@ public interface Test {
 	boolean isSuite();
 
 	boolean isSkipped();
+	
+	void setTimeOut(double timeForTimeOut);
+	 	
+	double getTimeOut();
 }

@@ -105,6 +105,11 @@ public class TestExecutorImpl implements TestExecutor {
 			testResultBuilder.withType(new TestResult.Failure().toString());
 		} finally {
 			long durationOnMillis= (System.nanoTime() - inicio) / 1000000;
+			if ((test.getTimeOut() < durationOnMillis) && (test.getTimeOut() > 0)){
+				testResultBuilder.withMessage("ERROR: TIME OUT" + '\n');
+				testResultBuilder.andOnSuccess(false);
+				testResultBuilder.withType(new TestResult.Error().toString());
+			}
 			testResultBuilder.withTime(durationOnMillis);
 			testResultCollector.collect(testResultBuilder.build());
 		}

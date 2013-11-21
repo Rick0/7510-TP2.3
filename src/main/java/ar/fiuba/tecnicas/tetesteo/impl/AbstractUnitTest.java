@@ -8,13 +8,17 @@ import ar.fiuba.tecnicas.tetesteo.TestExecutor;
  * test para su ejecucion.
  */
 public abstract class AbstractUnitTest extends AbstractTest {
+	
+	private double timeOut;
 
 	public AbstractUnitTest(String name, boolean skipped, String... labels) {
 		super(name, skipped, labels);
+		timeOut = -1;
 	}
 
 	public AbstractUnitTest(String name) {
 		this(name, false);
+		timeOut = -1;
 	}
 
 	/**
@@ -25,6 +29,16 @@ public abstract class AbstractUnitTest extends AbstractTest {
 	@Override
 	public boolean isSuite() {
 		return false;
+	}
+	
+	@Override
+	public void setTimeOut (double timeForTimeOut){
+		timeOut = timeForTimeOut;
+	}
+	
+	@Override
+	public double getTimeOut(){
+		return timeOut;
 	}
 
 }

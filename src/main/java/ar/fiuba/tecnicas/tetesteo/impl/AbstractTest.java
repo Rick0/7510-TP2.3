@@ -16,11 +16,14 @@ public abstract class AbstractTest implements Test {
 
 	private final Set<String> labels;
 	private final boolean skipped;
+	
+	protected double timeOut;
 
 	public AbstractTest(String name, boolean skipped, String... labels) {		
 		this.name = name;
 		this.labels = new TreeSet<String>(Arrays.asList(labels));		
 		this.skipped = skipped;
+		timeOut = -1;
 	}
 
 	@Override
@@ -44,5 +47,15 @@ public abstract class AbstractTest implements Test {
 	@Override
 	public boolean isSkipped() {
 		return skipped;
+	}
+	
+	@Override
+	public void setTimeOut (double timeForTimeOut){
+		timeOut = timeForTimeOut;
+	}
+	
+	@Override
+	public double getTimeOut(){
+		return timeOut;
 	}
 }
