@@ -1,6 +1,7 @@
 package ar.fiuba.tecnicas.tetesteo.store;
 
-/* Interfaz genérica que deben cumplir todos los stores */
+/* Interfaz genérica que deben cumplir todos los stores.
+ */
 public interface TestRunStore {
 
 	public boolean hasStores();

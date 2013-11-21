@@ -8,7 +8,9 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
-// TestRunStore en archivo de texto plano con extension .txt
+/* Store que guarda en archivo de texto plano con extension '.txt'.
+ * En una nueva corrida del programa, se puede recuperar informacion de corridas pasadas.
+ */
 public class TxtFileTestRunStore implements TestRunStore {
 
 	private File file;
@@ -24,7 +26,6 @@ public class TxtFileTestRunStore implements TestRunStore {
 			read();
 		}
 	}
-
 
 	@Override
 	public boolean hasStores() {
