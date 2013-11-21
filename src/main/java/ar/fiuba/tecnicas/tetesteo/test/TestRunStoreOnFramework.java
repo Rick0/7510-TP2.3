@@ -6,7 +6,6 @@ import static org.junit.Assert.assertTrue;
 import java.util.List;
 import java.util.Map;
 
-import org.junit.Test;
 
 import ar.fiuba.tecnicas.tetesteo.Context;
 import ar.fiuba.tecnicas.tetesteo.TestExecutor;
@@ -20,13 +19,6 @@ import ar.fiuba.tecnicas.tetesteo.impl.TestSuite;
 import ar.fiuba.tecnicas.tetesteo.store.MemoryTestRunStore;
 import ar.fiuba.tecnicas.tetesteo.store.TestRunStoreAccess;
 import ar.fiuba.tecnicas.tetesteo.store.TxtFileTestRunStore;
-import ar.fiuba.tecnicas.tetesteo.test.TestsUnderThisFramework.AssertContainsOnContained;
-import ar.fiuba.tecnicas.tetesteo.test.TestsUnderThisFramework.AssertDistinctOnDistinct;
-import ar.fiuba.tecnicas.tetesteo.test.TestsUnderThisFramework.AssertEqualsOnEquals;
-import ar.fiuba.tecnicas.tetesteo.test.TestsUnderThisFramework.AssertFalseOnFalse;
-import ar.fiuba.tecnicas.tetesteo.test.TestsUnderThisFramework.AssertGreaterThanOnGreater;
-import ar.fiuba.tecnicas.tetesteo.test.TestsUnderThisFramework.AssertLowerThanOnLesser;
-import ar.fiuba.tecnicas.tetesteo.test.TestsUnderThisFramework.AssertTrueOnTrue;
 
 public class TestRunStoreOnFramework {
 
