@@ -28,6 +28,11 @@ public class TestRunStoreAccess {
 		checkOldStores = true;
 	}
 
+	
+	public void setFalseCheckOldStores(){
+		checkOldStores = false;
+	}	
+	
 	public boolean hasStores(){
 		setDefaultStore();
 		return testRunStore.hasStores();

@@ -76,7 +76,8 @@ public class TestRunStoreTest {
 		createTestRunStoreTxt("TestSuccessfullTestWithTxt.txt");		
 		testSuite.addTest(new GenericOkTest("T4"));		
 		results = executeTestSuite(testSuite);		
-		assertEquals(results.get("Test suite").size(),3);		
+		assertEquals(results.get("Test suite").size(),3);	
+		TestRunStoreAccess.getInstance().setFalseCheckOldStores();
 	}	
 
 	@Test
@@ -92,7 +93,8 @@ public class TestRunStoreTest {
 		assertTrue(results.get("Test suite").get(2).isSuccess());	
 
 		results = executeTestSuite(testSuite);
-		assertEquals(results.size(),0);			
+		assertEquals(results.size(),0);
+		TestRunStoreAccess.getInstance().setFalseCheckOldStores();
 	}	
 
 
@@ -111,6 +113,7 @@ public class TestRunStoreTest {
 		testSuite.addTest(new GenericOkTest("T4"));		
 		executeTestSuite(testSuite);		
 		assertEquals(results.get("Test suite").size(),3);		
+		TestRunStoreAccess.getInstance().setFalseCheckOldStores();
 	}	
 
 	@Test
@@ -127,6 +130,7 @@ public class TestRunStoreTest {
 
 		results = executeTestSuite(testSuite);
 		assertEquals(results.size(),0);			
+		TestRunStoreAccess.getInstance().setFalseCheckOldStores();
 	}
 
 
