@@ -14,6 +14,9 @@ import ar.fiuba.tecnicas.tetesteo.impl.ContextImpl;
 import ar.fiuba.tecnicas.tetesteo.impl.TestMain;
 import ar.fiuba.tecnicas.tetesteo.impl.TestSuite;
 
+
+/* Clase destinada a realizar los tests de performance usando el framework del TP */
+
 public class TestForPerformanceOnFramework {
 
 	

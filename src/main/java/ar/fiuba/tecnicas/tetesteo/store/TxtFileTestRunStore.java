@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
+//TestRunStore en archivo de texto plano con extension .txt
 
 public class TxtFileTestRunStore implements TestRunStore {
 

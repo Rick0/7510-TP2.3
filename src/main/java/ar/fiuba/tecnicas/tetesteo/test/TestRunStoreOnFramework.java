@@ -20,6 +20,9 @@ import ar.fiuba.tecnicas.tetesteo.store.MemoryTestRunStore;
 import ar.fiuba.tecnicas.tetesteo.store.TestRunStoreAccess;
 import ar.fiuba.tecnicas.tetesteo.store.TxtFileTestRunStore;
 
+
+/* Clase destinada a realizar los tests de Stores usando el framework del TP */
+
 public class TestRunStoreOnFramework {
 
 	/**

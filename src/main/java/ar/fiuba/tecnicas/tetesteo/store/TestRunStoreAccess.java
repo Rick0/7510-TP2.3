@@ -1,5 +1,10 @@
 package ar.fiuba.tecnicas.tetesteo.store;
 
+/* Clase que seria una combinacion entre Singleton y Proxy para controlar el acceso
+ * a la utilizacion del TestRunStore. Si no se especifica un TestRunStore especifico,
+ * por defecto utilizara TxtFileTestRunStore
+ */
+
 public class TestRunStoreAccess {
 	private TestRunStore testRunStore;
 	private boolean checkOldStores;
