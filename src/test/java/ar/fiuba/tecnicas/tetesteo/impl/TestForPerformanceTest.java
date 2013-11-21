@@ -1,23 +1,15 @@
 package ar.fiuba.tecnicas.tetesteo.impl;
 
 
-import static org.mockito.Matchers.eq;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
-
-import java.io.OutputStreamWriter;
 import java.util.List;
 import java.util.Map;
 
 import static org.junit.Assert.*;
 
 import ar.fiuba.tecnicas.tetesteo.Context;
-import ar.fiuba.tecnicas.tetesteo.Test;
 import ar.fiuba.tecnicas.tetesteo.TestExecutor;
 import ar.fiuba.tecnicas.tetesteo.TestExecutorImpl;
 import ar.fiuba.tecnicas.tetesteo.TestResult;
-import ar.fiuba.tecnicas.tetesteo.TestResultCollector;
 import ar.fiuba.tecnicas.tetesteo.asserts.impl.Asserts;
 
 public class TestForPerformanceTest {
