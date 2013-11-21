@@ -1,7 +1,6 @@
 package ar.fiuba.tecnicas.tetesteo;
 
 import java.util.Set;
-//import java.util.regex.Pattern;
 
 /**
  * Interfaz unica para los test
@@ -21,8 +20,8 @@ public interface Test {
 	boolean isSuite();
 
 	boolean isSkipped();
-	
+
 	void setTimeOut(double timeForTimeOut);
-	 	
+
 	double getTimeOut();
 }

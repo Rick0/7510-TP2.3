@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Collection;
 
+
 public class TestSuiteTest {
 
 	public class GenericTest extends AbstractUnitTest {
@@ -22,7 +23,6 @@ public class TestSuiteTest {
 		public void test(TestExecutor testExecutor, Context context) {
 			Asserts.assertTrue(true);
 		}
-
 	}
 
 	@org.junit.Test

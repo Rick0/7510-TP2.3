@@ -1,6 +1,5 @@
 package ar.fiuba.tecnicas.tetesteo.test;
 
-
 import java.io.StringWriter;
 import java.util.LinkedList;
 
@@ -12,6 +11,7 @@ import ar.fiuba.tecnicas.tetesteo.impl.AbstractUnitTest;
 import ar.fiuba.tecnicas.tetesteo.impl.TestMain;
 import ar.fiuba.tecnicas.tetesteo.impl.TestRunnerImpl;
 import ar.fiuba.tecnicas.tetesteo.impl.TestSuite;
+
 
 public class TestsUnderThisFramework {
 
@@ -153,6 +153,6 @@ public class TestsUnderThisFramework {
 		suiteB2.addTest(suiteC);
 
 		TestMain.doMain(System.out, suiteA);								
-		
+
 	}
 }

@@ -1,14 +1,12 @@
 package ar.fiuba.tecnicas.tetesteo.impl;
 
 import static org.junit.Assert.*;
-
 import org.junit.Test;
-
-//import com.thoughtworks.xstream.XStream;
 
 import ar.fiuba.tecnicas.tetesteo.TestResult;
 import ar.fiuba.tecnicas.tetesteo.impl.TestResultCollectorImpl;
 import ar.fiuba.tecnicas.tetesteo.TestResultCollector;
+
 
 public class TestResultTest {
 

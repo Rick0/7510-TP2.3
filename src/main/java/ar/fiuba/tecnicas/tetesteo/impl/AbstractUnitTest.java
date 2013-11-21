@@ -8,7 +8,7 @@ import ar.fiuba.tecnicas.tetesteo.TestExecutor;
  * test para su ejecucion.
  */
 public abstract class AbstractUnitTest extends AbstractTest {
-	
+
 	private double timeOut;
 
 	public AbstractUnitTest(String name, boolean skipped, String... labels) {
@@ -30,12 +30,12 @@ public abstract class AbstractUnitTest extends AbstractTest {
 	public boolean isSuite() {
 		return false;
 	}
-	
+
 	@Override
 	public void setTimeOut (double timeForTimeOut){
 		timeOut = timeForTimeOut;
 	}
-	
+
 	@Override
 	public double getTimeOut(){
 		return timeOut;

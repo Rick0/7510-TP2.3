@@ -2,12 +2,12 @@ package ar.fiuba.tecnicas.tetesteo.store;
 
 import java.util.ArrayList;
 
-// Store que guarda en memoria. En una nueva corrida del programa, se pierden los datos
 
+// Store que guarda en memoria. En una nueva corrida del programa, se pierden los datos
 public class MemoryTestRunStore implements TestRunStore {
 
 	ArrayList<String> testNames;	
-	
+
 	public MemoryTestRunStore(){
 		testNames = new ArrayList<String>();
 	}
@@ -30,5 +30,5 @@ public class MemoryTestRunStore implements TestRunStore {
 	public void deleteOldStores() {
 		testNames.clear();
 	}
-	
+
 }

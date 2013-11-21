@@ -4,12 +4,11 @@ package ar.fiuba.tecnicas.tetesteo.store;
  * a la utilizacion del TestRunStore. Si no se especifica un TestRunStore especifico,
  * por defecto utilizara TxtFileTestRunStore
  */
-
 public class TestRunStoreAccess {
 	private TestRunStore testRunStore;
 	private boolean checkOldStores;
 	private static TestRunStoreAccess singleton = new TestRunStoreAccess();		
-	
+
 
 	private TestRunStoreAccess(){
 		testRunStore = null;
@@ -19,15 +18,15 @@ public class TestRunStoreAccess {
 	public static TestRunStoreAccess getInstance( ) {		
 		return singleton;
 	}
-		
+
 	public void setTestRunStore(TestRunStore test){		
 		singleton.testRunStore = test;
 	}
-	
+
 	public void setTrueCheckOldStores(){
 		checkOldStores = true;
 	}
-		
+
 	public boolean hasStores(){
 		setDefaultStore();
 		return singleton.testRunStore.hasStores();
@@ -50,13 +49,11 @@ public class TestRunStoreAccess {
 		setDefaultStore();
 		singleton.testRunStore.deleteOldStores();
 	}
-	
+
 	private void setDefaultStore(){
 		if (singleton.testRunStore == null){
 			singleton.testRunStore = new TxtFileTestRunStore("Reporte.txt");
 		}
 	}	
-	
-
 
 }

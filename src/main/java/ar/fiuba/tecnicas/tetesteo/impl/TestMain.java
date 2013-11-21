@@ -5,6 +5,7 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
 
+
 public abstract class TestMain {
 
 	public static int doMain(OutputStream output, TestSuite mainTestSuite) {

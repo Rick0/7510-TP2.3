@@ -5,6 +5,7 @@ import ar.fiuba.tecnicas.tetesteo.asserts.impl.Asserts;
 
 import java.io.OutputStreamWriter;
 
+
 public class TestRunnerTest {
 
 	@org.junit.Test

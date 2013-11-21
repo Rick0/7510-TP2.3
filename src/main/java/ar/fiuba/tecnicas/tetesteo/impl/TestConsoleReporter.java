@@ -6,6 +6,7 @@ import java.io.Writer;
 import ar.fiuba.tecnicas.tetesteo.TestReporter;
 import ar.fiuba.tecnicas.tetesteo.TestResult;
 
+
 public class TestConsoleReporter implements TestReporter {
 
 	String lastSuite = "";
@@ -17,7 +18,6 @@ public class TestConsoleReporter implements TestReporter {
 	public TestConsoleReporter(Writer writer) {
 		this.writer = writer;
 	}
-
 
 
 	@Override

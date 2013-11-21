@@ -3,13 +3,14 @@ package ar.fiuba.tecnicas.tetesteo.impl;
 import ar.fiuba.tecnicas.tetesteo.TestReporter;
 import ar.fiuba.tecnicas.tetesteo.TestResult;
 import ar.fiuba.tecnicas.tetesteo.TestResultCollector;
+
 import java.io.OutputStreamWriter;
 import java.io.Writer;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 
 public class TestResultCollectorImpl implements TestResultCollector {
 

@@ -2,7 +2,6 @@ package ar.fiuba.tecnicas.tetesteo;
 
 import java.util.List;
 import java.util.Map;
-//import ar.fiuba.tecnicas.tetesteo.impl.TestSuite;
 
 public interface TestExecutor {
 

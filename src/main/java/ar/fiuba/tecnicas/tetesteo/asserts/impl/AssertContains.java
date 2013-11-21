@@ -5,6 +5,7 @@ import ar.fiuba.tecnicas.tetesteo.asserts.Assert2;
 import java.util.Collection;
 import java.lang.AssertionError;
 
+
 public class AssertContains<T> implements Assert2<Collection<T>, T> {
 
 	@Override

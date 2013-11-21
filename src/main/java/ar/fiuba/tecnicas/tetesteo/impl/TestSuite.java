@@ -4,7 +4,6 @@ import ar.fiuba.tecnicas.tetesteo.*;
 
 import java.util.Collection;
 import java.util.LinkedList;
-//import java.util.regex.Pattern;
 
 /**
  * Agrupacion de tests unitarios, para un mejor reporte de resultados, idealmente debiera haber un test suite por cada
@@ -13,9 +12,9 @@ import java.util.LinkedList;
 public class TestSuite extends AbstractTest {
 
 	private Collection<Test> childTest;
-
 	private String suite;
 
+	
 	public TestSuite(String name, boolean skipped, String... labels) {
 		super(name, skipped, labels);
 		childTest = new LinkedList<>();

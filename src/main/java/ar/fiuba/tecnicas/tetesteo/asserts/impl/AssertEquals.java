@@ -2,6 +2,7 @@ package ar.fiuba.tecnicas.tetesteo.asserts.impl;
 
 import ar.fiuba.tecnicas.tetesteo.asserts.Assert2;
 
+
 public class AssertEquals<T> implements Assert2<T, T> {
 
 	@Override

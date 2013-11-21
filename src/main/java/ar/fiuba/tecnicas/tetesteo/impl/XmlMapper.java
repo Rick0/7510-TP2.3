@@ -1,10 +1,9 @@
 package ar.fiuba.tecnicas.tetesteo.impl;
 
 import ar.fiuba.tecnicas.tetesteo.xml.generated.*;
+import ar.fiuba.tecnicas.tetesteo.TestResult;
 
 import com.thoughtworks.xstream.XStream;
-
-import ar.fiuba.tecnicas.tetesteo.TestResult;
 
 import java.io.PrintWriter;
 import java.util.List;

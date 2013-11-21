@@ -1,11 +1,11 @@
 package ar.fiuba.tecnicas.tetesteo.impl;
 
 import ar.fiuba.tecnicas.tetesteo.TestResult;
-import ar.fiuba.tecnicas.tetesteo.TestResult.Builder;
 import ar.fiuba.tecnicas.tetesteo.store.TestRunStoreAccess;
 
+
 public class TestResultImpl implements TestResult {
-	
+
 	private final String type;
 	private final Boolean success;
 	private final String message;
@@ -13,7 +13,7 @@ public class TestResultImpl implements TestResult {
 	private final String testName;
 	private final String suiteName;
 	private final Boolean isSuite;
-	
+
 	private TestResultImpl(String type, Boolean success, String message,
 			long time, String testName, String suiteName, Boolean suiteFlag) {
 		this.type = type;
@@ -71,7 +71,6 @@ public class TestResultImpl implements TestResult {
 	public Boolean isSuite() {
 		return isSuite;
 	}
-	
 
 
 	public static class Builder implements TestResult.Builder {
@@ -83,6 +82,7 @@ public class TestResultImpl implements TestResult {
 		private String suiteName = ".";
 		private long time = 0;
 		private Boolean isSuite = Boolean.FALSE;
+		@SuppressWarnings("unused")
 		private String path = ".";
 
 		public Builder withType(String type) {
@@ -131,18 +131,17 @@ public class TestResultImpl implements TestResult {
 			this.time = time;
 			return this;
 		}
-				
+
 		public TestResult.Builder setPath(String path){
 			this.path = path;
 			return this;
 		}
 
 		public TestResult build() {
-//			return new TestResultImpl(type, success, message, time, testName,
-//					suiteName, isSuite);
 			return new TestResultImpl(type, success, message, time, testName,
 					suiteName, isSuite);
-
 		}
+
 	}
+
 }

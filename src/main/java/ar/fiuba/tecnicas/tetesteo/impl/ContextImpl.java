@@ -5,6 +5,7 @@ import ar.fiuba.tecnicas.tetesteo.Context;
 import java.util.HashMap;
 import java.util.Map;
 
+
 public class ContextImpl implements Context {
 
 	private Map<String, Object> values;
@@ -42,4 +43,5 @@ public class ContextImpl implements Context {
 	public Context duplicar() {
 		return new ContextImpl(new HashMap<>(values));
 	}
+
 }

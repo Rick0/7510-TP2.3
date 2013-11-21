@@ -4,6 +4,7 @@ import java.util.List;
 import ar.fiuba.tecnicas.tetesteo.xml.generated.DAOTestCase;
 import java.util.ArrayList;
 
+
 public class DAOTestSuite {
 	private List<DAOTestCase> TestCases;
 	private String name;

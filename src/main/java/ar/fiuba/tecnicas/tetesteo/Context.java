@@ -11,4 +11,5 @@ public interface Context {
 	 * Por ejemplo, que un unit test no vea variables que definio otro unit test hermano (que comparten la misma test suite)
 	 */
 	Context duplicar();
+
 }

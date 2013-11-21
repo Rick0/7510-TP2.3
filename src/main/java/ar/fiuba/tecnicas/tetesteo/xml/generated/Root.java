@@ -5,8 +5,11 @@ import java.util.List;
 
 import ar.fiuba.tecnicas.tetesteo.xml.generated.DAOTestSuite;
 
+
 public class Root {
+
 	List<DAOTestSuite> testsuites;
+
 
 	public Root() {
 		testsuites = new ArrayList<DAOTestSuite>();

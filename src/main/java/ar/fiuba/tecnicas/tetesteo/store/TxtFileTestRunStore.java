@@ -8,8 +8,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
-//TestRunStore en archivo de texto plano con extension .txt
-
+// TestRunStore en archivo de texto plano con extension .txt
 public class TxtFileTestRunStore implements TestRunStore {
 
 	private File file;
@@ -52,7 +51,7 @@ public class TxtFileTestRunStore implements TestRunStore {
 		file.delete();	
 		testNames.clear();
 	}
-	
+
 	private boolean existFile (){
 		return file.exists();
 	}	

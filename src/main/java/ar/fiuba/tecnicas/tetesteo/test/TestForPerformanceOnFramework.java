@@ -1,6 +1,5 @@
 package ar.fiuba.tecnicas.tetesteo.test;
 
-
 import java.util.List;
 import java.util.Map;
 
@@ -16,10 +15,8 @@ import ar.fiuba.tecnicas.tetesteo.impl.TestSuite;
 
 
 /* Clase destinada a realizar los tests de performance usando el framework del TP */
-
 public class TestForPerformanceOnFramework {
 
-	
 	public static class AssertErrorTestPerformance extends AbstractUnitTest {
 		public AssertErrorTestPerformance() {
 			super("Error Performance Test");
@@ -34,13 +31,13 @@ public class TestForPerformanceOnFramework {
 			}
 			Asserts.assertEquals(testElement, 1);
 		}
-		
+
 		public void setup(Context context){
 			setTimeOut(1000);
 		}
 	}
-	
-	
+
+
 	public static class AssertOkTestPerformance extends AbstractUnitTest {
 		public AssertOkTestPerformance() {
 			super("OK Performance Test");
@@ -55,13 +52,13 @@ public class TestForPerformanceOnFramework {
 			}
 			Asserts.assertEquals(testElement, 1);
 		}
-		
+
 		public void setup(Context context){
 			setTimeOut(1000);
 		}
 	}
-	
-	
+
+
 	public static class OkPerformanceTest extends AbstractUnitTest {
 		public OkPerformanceTest() {
 			super("OkPerformanceTest");
@@ -80,8 +77,8 @@ public class TestForPerformanceOnFramework {
 			context.setProperty("isSuccess",results.get("Test suite").get(0).isSuccess());
 		}
 	}
-	
-	
+
+
 	public static class FailedPerformanceTest extends AbstractUnitTest {
 		public FailedPerformanceTest() {
 			super("FailedPerformanceTest");
@@ -100,16 +97,16 @@ public class TestForPerformanceOnFramework {
 			context.setProperty("isError",results.get("Test suite").get(0).isError());
 		}
 	}
-	
+
 	private static Map<String, List<TestResult>> executeTestSuite(TestSuite testSuite){
 		TestExecutor testExecutor = new TestExecutorImpl();
 		testExecutor.execute(testSuite, new ContextImpl());
 		Map<String, List<TestResult>> results = testExecutor.getResults();
 		return results;
 	}
-	
-	
-	
+
+
+
 	/**
 	 * @param args
 	 */
@@ -119,5 +116,5 @@ public class TestForPerformanceOnFramework {
 		suiteA.addTest(new FailedPerformanceTest());
 		TestMain.doMain(System.out, suiteA);
 	}	
-	
+
 }

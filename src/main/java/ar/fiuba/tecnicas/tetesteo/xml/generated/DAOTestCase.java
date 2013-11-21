@@ -1,6 +1,7 @@
 package ar.fiuba.tecnicas.tetesteo.xml.generated;
 
 public class DAOTestCase {
+	
 	private String name;
 	private long time;
 	private boolean status;

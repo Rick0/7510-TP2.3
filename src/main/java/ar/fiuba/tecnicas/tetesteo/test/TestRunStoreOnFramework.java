@@ -6,7 +6,6 @@ import static org.junit.Assert.assertTrue;
 import java.util.List;
 import java.util.Map;
 
-
 import ar.fiuba.tecnicas.tetesteo.Context;
 import ar.fiuba.tecnicas.tetesteo.TestExecutor;
 import ar.fiuba.tecnicas.tetesteo.TestExecutorImpl;
@@ -22,12 +21,7 @@ import ar.fiuba.tecnicas.tetesteo.store.TxtFileTestRunStore;
 
 
 /* Clase destinada a realizar los tests de Stores usando el framework del TP */
-
 public class TestRunStoreOnFramework {
-
-	/**
-	 * @param args
-	 */
 
 	public static class AssertTestFailErrorNewWithTxt extends AbstractUnitTest {
 		int ValueA;

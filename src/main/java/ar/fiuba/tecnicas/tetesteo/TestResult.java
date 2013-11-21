@@ -1,7 +1,5 @@
 package ar.fiuba.tecnicas.tetesteo;
 
-//import ar.fiuba.tecnicas.tetesteo.impl.TestResultImpl.Builder;
-
 /**
  * Objeto que representa el resultado de un test
  */
@@ -24,7 +22,7 @@ public interface TestResult {
 	String toString();
 
 	Boolean isSuite();
-		
+
 
 	/**
 	 * Builder de resultado, asi se puede ir llenando los distintos valores del resultado antes de ser creado,
@@ -48,7 +46,7 @@ public interface TestResult {
 		Builder withTime(long durationOnMillis);
 
 		Builder setSuiteFlag(boolean suiteFlag);
-				
+
 		TestResult build();
 
 	}
