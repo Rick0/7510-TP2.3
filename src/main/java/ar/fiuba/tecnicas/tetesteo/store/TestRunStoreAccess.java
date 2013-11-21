@@ -21,7 +21,7 @@ public class TestRunStoreAccess {
 	}
 
 	public void setTestRunStore(TestRunStore test){		
-		singleton.testRunStore = test;
+		testRunStore = test;
 	}
 
 	public void setTrueCheckOldStores(){
@@ -30,30 +30,29 @@ public class TestRunStoreAccess {
 
 	public boolean hasStores(){
 		setDefaultStore();
-		return singleton.testRunStore.hasStores();
+		return testRunStore.hasStores();
 	}
 
 	public boolean isTestOk(String testName){
 		setDefaultStore();
-		return checkOldStores && singleton.testRunStore.isTestOk(testName);
+		return checkOldStores && testRunStore.isTestOk(testName);
 	}
 
 	public void addTestOk(String testName){
 		if (checkOldStores){
 			setDefaultStore();
-			singleton.testRunStore.addTestOk(testName);
+			testRunStore.addTestOk(testName);
 		}
 	}
 
-
 	public void deleteOldStores(){
 		setDefaultStore();
-		singleton.testRunStore.deleteOldStores();
+		testRunStore.deleteOldStores();
 	}
 
 	private void setDefaultStore(){
-		if (singleton.testRunStore == null){
-			singleton.testRunStore = new TxtFileTestRunStore("Reporte.txt");
+		if (testRunStore == null){
+			testRunStore = new TxtFileTestRunStore("Reporte.txt");
 		}
 	}	
 
