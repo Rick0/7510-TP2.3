@@ -5,6 +5,7 @@ package ar.fiuba.tecnicas.tetesteo.store;
  * por defecto utilizara TxtFileTestRunStore.
  */
 public class TestRunStoreAccess {
+
 	private TestRunStore testRunStore;
 	private boolean checkOldStores;
 	private static TestRunStoreAccess singleton = new TestRunStoreAccess();		
