@@ -12,3 +12,8 @@ target
 .classpath
 .project
 .settings
+
+
+#  Test Files   #
+TestSuccessfullTestWithTxt.txt
+ThreeOkOnTxt.txt
