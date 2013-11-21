@@ -251,7 +251,6 @@ public class TestRunStoreOnFramework {
 		suiteA.addTest(new AssertTestFailErrorNewOnMemory());
 		suiteA.addTest(new AssertThreeOkOnMemory());
 		TestMain.doMain(System.out, suiteA);								
-
 	}
 
 
